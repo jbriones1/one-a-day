@@ -19,10 +19,14 @@
 
 <body>
 
-  <div class="points">
+  <!-- <div class="points">
     <img id="crown" alt="crown" src="../icons/crown.png">
     <p id="numberOfPoints" class="points">53</p>
-    <p class="points">Points</p>
+    <p class="points">experience</p>
+  </div> -->
+
+  <div class="progress">
+      <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
   </div>
 
   <div class="main">
@@ -44,8 +48,8 @@
     <img class="user" src="../icons/user.png">
   </div>
 
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -67,28 +71,13 @@
     var taskColl = db.collection("tasks");
   </script>
   <script src="../js/main.js"></script>
+
 <script>
   getUser();
   createCollection();
   loadTask();
   
-  function buttonPress() {
-    
-    const increment = firebase.firestore.FieldValue.increment(1);
-   var user = firebase.auth().currentUser;
-    if (user) {
-      
-    } else {
-      // No user is signed in.
-    }
-    userColl.doc(user.uid).onSnapshot(function (snap) {
-        let exp = db.collection('users').doc(user.uid);
-      exp.update({ experience: increment});
-      })
-    
-    
-    console.log("pressed");
-  }
+
 </script>  
 </body>
 

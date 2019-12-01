@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+  height: 96.5vh;
+  background: linear-gradient(180deg, rgba(223,200,206,1) 0%, rgba(212,180,186,1) 87%, rgba(180,178,189,1) 100%);
+  background-size: contain;
+}
+
+#firebaseui-auth-container {
+  padding-top: 8em;
+  margin: 10%;
+}
+
+#welcome {
+  font-family: 'Lato', sans-serif;
+  font-size: 40pt;
+  text-align: center;
+  text-shadow: 1px 1px 4px #E5D2D6;
+  color: #4C686B;
+}
+

@@ -24,7 +24,7 @@ function getUser() {
     if (user) {
       console.log(user.displayName);
       let firstname = user.displayName.split(' ')
-      document.getElementById("customizeHere").innerHTML = firstname[0];
+      // document.getElementById("customizeHere").innerHTML = firstname[0];
       db.collection("users").doc(user.uid).set({
         "name": user.displayName,
         "email": user.email,

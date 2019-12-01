@@ -7,7 +7,6 @@ body {
 }
 
 #firebaseui-auth-container {
-  padding-top: 8em;
   margin: 10%;
 }
 
@@ -17,5 +16,13 @@ body {
   text-align: center;
   text-shadow: 1px 1px 4px #E5D2D6;
   color: #4C686B;
+}
+
+#logo_oneADay{
+  margin:0 auto;
+  width: 80px;
+  display: block;
+  margin-top: 10vh;
+
 }
 

@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+</head>
+
+<body>
+	<div id="textContainer">
+		<h1>Task</h1>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBwGPz-uu49S3Hl0r75Tg-QAL0vN22-fPc",
+      authDomain: "one-a-day-e7768.firebaseapp.com",
+      databaseURL: "https://one-a-day-e7768.firebaseio.com",
+      projectId: "one-a-day-e7768",
+      storageBucket: "one-a-day-e7768.appspot.com",
+      messagingSenderId: "230903075933",
+      appId: "1:230903075933:web:700105939dbeb1b9c7e9b4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var userColl = db.collection("users");
+    var taskColl = db.collection("tasks");
+  </script>
+  <script src="../js/main.js"></script>
+<script>
+  getUser();
+  createCollection();
+  loadTask();
+</script>
+
+
+</body>
+
+</html>

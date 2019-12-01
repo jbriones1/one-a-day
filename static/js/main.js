@@ -23,6 +23,7 @@ function getUser() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       checkPercent(user);
+      updateLevel();
       const usersRef = userColl.doc(user.uid);
       usersRef.get()
         .then( snap => {
@@ -62,8 +63,9 @@ function buttonPress() {
     
   const increment = firebase.firestore.FieldValue.increment(1);
   var user = firebase.auth().currentUser;
-  let exp = db.collection('users').doc(user.uid);
-  exp.update({ experience: increment});
+  let doc = db.collection('users').doc(user.uid);
+ 
+  doc.update({ experience: increment});
   updateExp();
   console.log("pressed");
 }
@@ -72,7 +74,6 @@ function updateExp() {
   var user = firebase.auth().currentUser;
   let exp = db.collection('users').doc(user.uid).onSnapshot(function (snap) {
     let exp = snap.data().experience;
-    $("#numberOfPoints").html(exp);
     checkPercent(user);
   });
 }
@@ -86,5 +87,14 @@ function checkPercent(user) {
     $("#progressBar").css("width", perc+"%");
   })
 }
+
+function updateLevel() {
+  var user = firebase.auth().currentUser;
+  let exp = db.collection('users').doc(user.uid).onSnapshot(function (snap) {
+    let lvl = snap.data().level;
+    $("#numberOfPoints").html(lvl);
+  });
+}
+
 
 

@@ -2,110 +2,19 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
 
-  <style>
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
 
-    body {
-      height: 100vh;
-      background-size:cover;
-      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(229,210,214,1) 0%, rgba(180,178,189,1) 100%, rgba(255,255,255,1) 100%);
-    }
-    div.points {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
 
-    }
-    #crown {
-      margin-left: 1em;
-      width: 50px;
-      height: 60px;
-    }
-    p.points {
-      display: inline;
-      font-size: 16pt;
-      margin-top: 1em;
-      font-weight: bold;
-      color: #4C686B;
-    }
-    #numberOfPoints {
-      margin-left: 12px;
-      margin-right: 4px;
-    }
-    div.main {
-      text-align: center;
-      background-color: white;
-      margin: 5% 12%;
-      margin-top: 150px;
-      border-radius: 30px;
-      box-shadow: 0px 6px 0px #B4B2BD;
-      vertical-align: middle;
-      
-    }
-    div.date {
-      padding-top: 1em;
-      margin-bottom: 5em;
-    }
-    h4.date {
-      color: #8FA1A4;
-    }
-    h1.date {
-      display: inline;
-      font-weight: bold;
-      color: #DFC8CE;
-      text-shadow: 0px 1px 1px #4C686B;
-      font-size: 50pt;
-    }
-
-    div.task {
-      margin-top: 3em;
-      padding-bottom: 5em;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-    #checked {
-      width: 50px;
-      display: block;
-    }
-
-    #unchecked {
-      width: 40px;
-      display: none;
-    }
-
-    p.task {
-      justify-self: flex-end;
-      color: #4C686B;
-    
-      font-size: 13pt;
-    }
-
-    div.form {
-      padding-bottom: 5em;
-    }
-    div.user {
-     position: absolute;
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     bottom: 0;
-    }
-    img.user {
-      width: 50px;
-      justify-self: center;
-      filter:drop-shadow(0px 0px 4px black);
-    }
-
-    button {
-      background-color: #D4B4BA;
-      border: none;
-      padding: 1em 2em;
-      color: white;
-      box-shadow: 0px 1px 1px #4C686B;
-    }
-  </style>
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />  
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -125,8 +34,7 @@
     <div id="form">
       <div class="task">
         <button>Done</button>
-        
-        <p class="task">Clean your room</p>
+        <p id="task"></p>
       </div>
    </div>
 
@@ -136,6 +44,34 @@
     <img class="user" src="../icons/user.png">
   </div>
 
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBwGPz-uu49S3Hl0r75Tg-QAL0vN22-fPc",
+      authDomain: "one-a-day-e7768.firebaseapp.com",
+      databaseURL: "https://one-a-day-e7768.firebaseio.com",
+      projectId: "one-a-day-e7768",
+      storageBucket: "one-a-day-e7768.appspot.com",
+      messagingSenderId: "230903075933",
+      appId: "1:230903075933:web:700105939dbeb1b9c7e9b4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var userColl = db.collection("users");
+    var taskColl = db.collection("tasks");
+  </script>
+  <script src="../js/main.js"></script>
+<script>
+  getUser();
+  createCollection();
+  loadTask();
+</script>  
 </body>
 
 </html>

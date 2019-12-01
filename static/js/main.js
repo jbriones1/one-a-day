@@ -15,7 +15,7 @@ function loadTask() {
       tasks.push(taskStr);
     });
     console.log(tasks[rand]);
-    $("h1").html(tasks[rand]);
+    $("#task").html(tasks[rand]);
   });  
 }
 

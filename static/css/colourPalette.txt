@@ -1,0 +1,6 @@
+dark green #4C686B rgb(76, 104, 107)
+light green #8FA1A4 rgb(143, 161, 164)
+grey #B4B2BD rgb(180, 178, 189)
+light salmon #E5D2D6 rgb(229, 210, 214)
+light pink #DFC8CE rgb(223, 200, 206)
+pink #D4B4BA rgb(212, 180, 186)

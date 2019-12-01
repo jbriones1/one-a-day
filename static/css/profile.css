@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(180deg, #FDF0F2 42.19%, rgba(156, 169, 172, 0.4725) 99.99%, #8FA1A4 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #container {
@@ -40,7 +42,7 @@ body {
 .completedTask {
   background: white;
   width: 80vw;
-  height: 30vh;
+  height: 20vh;
   margin: 3vh auto;
   border-radius: 30px;
   box-shadow: 0px 6px 0px #B4B2BD;
